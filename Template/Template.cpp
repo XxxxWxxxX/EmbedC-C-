@@ -40,10 +40,6 @@ public :
 
 };
 
-
-
-
-
 int main()
 {
 
@@ -64,10 +60,6 @@ int main()
     //类模板继承
     B<int,float,char,double> b;
     b.showInfo(1,333.4);
-
-
-
-
 
     return 0;
 }
