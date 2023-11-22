@@ -1,8 +1,11 @@
 /*
     Static 静态成员函数只能访问静态成员变量
-    修饰函数,在类内存在，只要这个类存在就无需定义对象，直接调用修饰的函数
+    静态函数,在类内存在，只要这个类存在就无需定义对象，直接调用修饰的函数
     static int getAmount()   //本文件的全局函数，仅属于本文件，且不可被extern 引用
-
+    1.其他文件内可以定义同名文件；
+    2.不被其他文件引用；
+    3.不创建对象也可以调用；
+    3.静态函数是全局的，不依赖类对象，没this指针，不能调用类中属性（变量）
 */
 
 #include <iostream>
@@ -42,9 +45,14 @@ public:
              << "姓名：" << this -> name << endl;
     }
 
-    static int getAmount()   //本文件的全局函数，仅属于本文件，且不可被extern 引用
+    static int getAmount()   //静态函数本文件的全局函数，仅属于本文件，且不可被extern 引用
     {
         return amount;          //Static 静态成员函数只能访问静态成员变量
+    }
+
+    int getAmount2()
+    {
+        return amount; 
     }
 
 };
@@ -52,11 +60,10 @@ public:
 int Student::amount = 100 ;   //类中声明，类外定义
 int main(void)
 {
-    // Student(xxx,28) stu;
-    //Student stu("Xxx",28)；  //类定义
-
     cout << Student::getAmount() << endl;  //static修饰的函数，可以不定义对象就能被引用
 
+    Student stu("Xxx",28);
+    cout << stu.getAmount2() << endl;       //普通函数必须依赖对象
 
     return 0;
 }
