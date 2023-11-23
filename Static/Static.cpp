@@ -19,7 +19,7 @@ private:
     int age;
     string  name;
 
-    static int amount;
+    static int amount;  //static修饰变量类中声明，类外定义
 public:
     Student(/* args */)
     {
@@ -57,7 +57,7 @@ public:
 
 };
 
-int Student::amount = 100 ;   //类中声明，类外定义
+int Student::amount = 100 ;   //static修饰变量类中声明，类外定义
 int main(void)
 {
     cout << Student::getAmount() << endl;  //static修饰的函数，可以不定义对象就能被引用
