@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>  //模板关键字
+template <typename T>  //模板关键字template typename
 class My_Stack
 {
 private:
@@ -24,7 +24,7 @@ public:
 };
 
 template <typename T>
-My_Stack<T>::My_Stack(int c):size(0),capcity(c)  //需要添加 <T>
+My_Stack<T>::My_Stack(int c):size(0),capcity(c)  //类后需要添加 <T>
 {
     data = new T[c];  //申请空间
 }

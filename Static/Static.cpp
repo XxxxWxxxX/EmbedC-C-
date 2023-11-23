@@ -63,7 +63,7 @@ int main(void)
     cout << Student::getAmount() << endl;  //static修饰的函数，可以不定义对象就能被引用
 
     Student stu("Xxx",28);
-    cout << stu.getAmount2() << endl;       //普通函数必须依赖对象
+    cout << stu.getAmount2() << endl;       //普通函数调用静态变量必须依赖对象
 
     return 0;
 }

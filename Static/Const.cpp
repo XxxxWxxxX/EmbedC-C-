@@ -39,6 +39,6 @@ int main(void)
     const int b = 20; //常量
     cout << &a << endl;
 
-
+    int const c = 2;  //const在前和在后意义不同
 
 }

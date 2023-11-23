@@ -3,14 +3,14 @@
 using namespace std;
 
 //函数模板
-//template <class T>      //函数模板，形式1
-template <typename T>      //函数模板，形式2
+//template <class T>      //形式1 <class T>
+template <typename T>      //形式2 <typename T>
 T add_func(T a,T b)
 {
     return a + b;
 }
 
-//类模板，调用时指定类型
+//类模板，调用时必须指定类型
 template <class T1,class T2,class T3>  //模板中参数数量不定
 class A   //类生成器
 {
@@ -58,7 +58,7 @@ int main()
     // a.show(22,3.25);
 
     //类模板继承
-    B<int,float,char,double> b;
+    B<int,float,char,double> b;     //T1继承了父类
     b.showInfo(1,333.4);
 
     return 0;

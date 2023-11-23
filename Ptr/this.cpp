@@ -46,7 +46,7 @@ public:
         cout << "年龄：" << this-> age << '\n' << "姓名：" << this -> name << endl;
     }
 
-    Student & setName1(string name)  //TODO & 引用，
+    Student & setName1(string name)  //TODO & 引用即指针（实际意义），被const修饰后的指针
     {
         this -> name = name;
         return *this;           //2.返回本对象
